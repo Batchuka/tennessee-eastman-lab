@@ -1,3 +1,9 @@
+/* NOTAS
+Aqui será a lógica de medição de XMEAS do modelo Tennessee Eastman. As saídas do processo são representadas
+como um vetor de ponto flutuante, onde cada elemento corresponde a uma medição específica do processo. 
+A estrutura Outputs inclui um método construtor para inicializar o vetor com o tamanho especificado.
+*/
+
 #[derive(Clone)]
 pub struct Outputs {
     /// Process measurements

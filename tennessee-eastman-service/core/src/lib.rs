@@ -1,3 +1,10 @@
+/* NOTAS:
+Aqui definimos a estrutura principal do modelo Tennessee Eastman, que inclui o estado do sistema,
+as entradas, as saídas e os parâmetros do modelo. A estrutura Plant encapsula todos esses componentes
+e fornece métodos para inicialização, atualização do estado com base nas entradas e obtenção das saídas.
+Esta implementação segue a abordagem descrita por Downs e Vogel (1993) no desenvolvimento do modelo Tennessee Eastman.
+*/
+
 pub mod state;
 pub mod inputs;
 pub mod outputs;
