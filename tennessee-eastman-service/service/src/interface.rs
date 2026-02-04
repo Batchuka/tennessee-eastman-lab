@@ -9,16 +9,13 @@ Essa comunicação entre a planta e o controlador é feita através dessas vari�
 representadas no código? São um barramento de dados simples, usando vetores de ponto flutuante (f64).
 */
 
-struct PlantBus {
-    // Entradas (atuadores)
-    inputs: Inputs,
-
-    // Saídas (sensores)
-    outputs: Outputs,
-
-    // Estado interno (não visível)
-    state: State,
-
-    // Tempo
-    time: f64,
+pub struct PlantBus {
+    pub fn new() -> Self {
+        Self {
+            inputs: Inputs::default(),
+            outputs: Outputs::default(),
+            state: State::new(50),
+            time: 0.0,
+        }
+    }
 }
