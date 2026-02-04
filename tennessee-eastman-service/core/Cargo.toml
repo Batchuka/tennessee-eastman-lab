@@ -1,13 +1,13 @@
-# Não sabe nada de 'rede', 'thread', 'container', 'tempo real', 'usuários'
-# Só sabe de 'planta', 'estado', 'entradas', 'saídas', 'parâmetros', 'edos', 'integração'
+# # Não sabe nada de 'rede', 'thread', 'container', 'tempo real', 'usuários'
+# # Só sabe de 'planta', 'estado', 'entradas', 'saídas', 'parâmetros', 'edos', 'integração'
 
-[package]
-name = "te_core"
-version = "0.1.0"
-edition = "2021"
+# [package]
+# name = "te_core"
+# version = "0.1.0"
+# edition = "2021"
 
-[lib]
-name = "te_core"
-path = "src/lib.rs"
+# [lib]
+# name = "te_core"
+# path = "src/lib.rs"
 
-[dependencies]
+# [dependencies]
