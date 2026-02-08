@@ -6,7 +6,9 @@ nos autores originais do modelo Tennessee Eastman, Downs e Vogel (1993), este m�
 é adequado para simulações em tempo real devido à sua eficiência computacional.
 */
 
-use crate::{State, Inputs};
+use crate::inputs::Inputs;
+use crate::state::State;
+
 use crate::dynamics::derivatives;
 
 pub fn step_euler(

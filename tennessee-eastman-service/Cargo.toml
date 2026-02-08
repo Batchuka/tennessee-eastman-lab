@@ -1,3 +1,5 @@
+# Necessário para definir o workspace do Cargo.
+
 [workspace]
 members = [
     "core",

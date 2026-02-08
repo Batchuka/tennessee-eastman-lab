@@ -15,6 +15,7 @@ pub struct Inputs {
 }
 
 impl Inputs {
+    
     pub fn new(n_mv: usize, n_dv: usize) -> Self {
         Self {
             mv: vec![0.0; n_mv],

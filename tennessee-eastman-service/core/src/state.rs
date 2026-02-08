@@ -12,9 +12,14 @@ pub struct State {
 }
 
 impl State {
+    
     pub fn new(n: usize) -> Self {
         Self {
             x: vec![0.0; n],
         }
+    }
+
+    pub fn set(&mut self, values: &[f64]) {
+        self.x.copy_from_slice(values);
     }
 }
