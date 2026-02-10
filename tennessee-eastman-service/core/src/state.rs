@@ -20,6 +20,10 @@ impl State {
     }
 
     pub fn set(&mut self, values: &[f64]) {
+        assert!(
+            values.len() == self.x.len(),
+            "State::set: tamanho inválido"
+        );
         self.x.copy_from_slice(values);
     }
 }
