@@ -1,0 +1,11 @@
+[state]
+values = [
+  120.4, 2705.0, 75.0
+  # ... até 50 valores
+]
+
+[xmv]
+values = [
+  63.053, 53.980, 24.644
+  # ... até 12 valores
+]
