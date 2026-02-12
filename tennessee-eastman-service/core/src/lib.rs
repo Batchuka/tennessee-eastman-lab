@@ -1,9 +1,6 @@
 pub mod bus;
 pub mod plant;
 pub mod state;
-pub mod inputs;
-pub mod outputs;
 pub mod params;
 pub mod dynamics;
-pub mod integrator;
-pub mod metadata;
+pub mod initial_state;

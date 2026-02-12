@@ -26,3 +26,16 @@ pub fn derivatives(
     dx[0] = -state.x[0] + inputs.mv[0];
     dx[1] =  state.x[0] - 2.0 * state.x[1];
 }
+
+pub fn step_euler(
+    state: &mut State,
+    inputs: &Inputs,
+    dt: f64,
+) {
+    let mut dx = vec![0.0; state.x.len()];
+    derivatives(state, inputs, &mut dx);
+
+    for i in 0..state.x.len() {
+        state.x[i] += dx[i] * dt;
+    }
+}

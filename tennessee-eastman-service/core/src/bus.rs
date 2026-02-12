@@ -1,41 +1,45 @@
-/* NOTAS:
-PlantBus representa o barramento de comunicação da planta.
+use crate::params::Params;
 
-Ele contém:
-- entradas (atuadores / distúrbios)
-- estado interno (variáveis dinâmicas)
-- saídas (medições)
-- tempo lógico da simulação
+#[derive(Clone)]
+pub struct Inputs {
+    pub mv: Vec<f64>,   // manipuladas
+    pub dv: Vec<f64>,   // distúrbios
+}
 
-Este barramento é compartilhado entre:
-- a planta (Plant), que atualiza estado e saídas
-- o serviço, que controla o avanço do tempo e entradas
-*/
+impl Inputs {
+    pub fn new(n_mv: usize, n_dv: usize) -> Self {
+        Self {
+            mv: vec![0.0; n_mv],
+            dv: vec![0.0; n_dv],
+        }
+    }
+}
 
-use crate::inputs::Inputs;
-use crate::outputs::Outputs;
-use crate::state::State;
+#[derive(Clone)]
+pub struct Outputs {
+    pub xmeas: Vec<f64>,   // medições
+}
 
-pub struct PlantBus {
-    /// Entradas manipuladas e distúrbios
+impl Outputs {
+    pub fn new(n_outputs: usize) -> Self {
+        Self {
+            xmeas: vec![0.0; n_outputs],
+        }
+    }
+}
+
+pub struct Bus {
     pub inputs: Inputs,
-
-    /// Estado dinâmico interno da planta
-    pub state: State,
-
-    /// Saídas medidas da planta
     pub outputs: Outputs,
-
-    /// Tempo lógico da simulação [s]
     pub time: f64,
 }
 
-impl PlantBus {
-    pub fn new(state: State, inputs: Inputs, outputs: Outputs) -> Self {
+impl Bus {
+
+    pub fn new(params: &Params) -> Self {
         Self {
-            state,
-            inputs,
-            outputs,
+            inputs: Inputs::new(params.n_mv, params.n_dv),
+            outputs: Outputs::new(params.n_outputs),
             time: 0.0,
         }
     }

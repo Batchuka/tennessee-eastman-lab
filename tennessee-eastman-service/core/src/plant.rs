@@ -6,10 +6,7 @@ Esta implementação segue a abordagem descrita por Downs e Vogel (1993) no dese
 */
 
 use crate::state::State;
-use crate::inputs::Inputs;
-use crate::outputs::Outputs;
 use crate::params::Params;
-use crate::integrator;
 
 pub struct Plant {
     pub state: State,
@@ -21,7 +18,7 @@ pub struct Plant {
 impl Plant {
     
     /// Inicialização padrão: estado zerado
-    pub fn new(params: Params) -> Self {
+    pub fn new(params: Params) -> Self { 
         let state = State::new(params.n_states);
 
         Self::from_state(state, params)
