@@ -1,8 +1,3 @@
-/* NOTAS:
-Aqui serão definidas as equações diferenciais que governam a dinâmica da planta. No caso do Tennessee Eastman, 
-essas equações são originalmente implementadas na função TEFUNC, que calcula as derivadas dos estados com base 
-no estado atual e nas entradas.
-*/
 
 use crate::{inputs::Inputs, state::State};
 
